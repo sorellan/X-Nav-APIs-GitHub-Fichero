@@ -1,9 +1,9 @@
 var github;
 var repo;
-var results = $("#results");
-var repoHTML = "User: <input type='text' name='user' value='name' " +
+var results;
+var repoHTML = "User: <input type='text' name='user' value='sorellan' " +
     "id='user' size='10' />" +
-    "Repo: <input type='text' name='repo' value='repo' " +
+    "Repo: <input type='text' name='repo' value='X-Nav-APIs-GitHub-Fichero' " +
     "id='repo' size='10' />" +
     "<button type='button'>Search repo data</button>";
 var repoFile = "File: <input type='text' name='file' value='filename' " +
@@ -31,6 +31,7 @@ function getRepo() {
     var username = $("#user").val();
     var reponame = $("#repo").val();
     repo = github.getRepo(username, reponame);
+    results = $("#results");
 
     repo.show(function(err, repo) {
         if(err) {
