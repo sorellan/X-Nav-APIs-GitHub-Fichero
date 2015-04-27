@@ -1,7 +1,7 @@
 var github;
 var repo;
 var results;
-var repoHTML = "User: <input type='text' name='user' value='sorellan' " +
+var repoData = "User: <input type='text' name='user' value='sorellan' " +
     "id='user' size='10' />" +
     "Repo: <input type='text' name='repo' value='X-Nav-APIs-GitHub-Fichero' " +
     "id='repo' size='10' />" +
@@ -12,10 +12,6 @@ var repoFile = "File: <input type='text' name='file' value='filename' " +
     "id='content' size='10' />" +
     "<button type='button'>Create file</button>";
 
-function btoa(data) {
-    return window.btoa(data);
-};
-
 function getToken() {
 	var tok = $("#token").val();
 	console.log(tok);
@@ -23,7 +19,7 @@ function getToken() {
   		token: tok,
   		auth: "oauth"
 	});
-	$("#form_repo").html(repoHTML);
+	$("#form_repo").html(repoData);
 	$("#form_repo button").click(getRepo);
 };
 
